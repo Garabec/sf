@@ -3,9 +3,11 @@
 namespace AppBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use AppBundle\Entity\Article;
 
 class ArticleController extends Controller
 {
@@ -36,6 +38,25 @@ class ArticleController extends Controller
         //return new Response(" <html><body> article: {$id} </body></html>");
         
     }
+    
+    /**
+     * @Route("/articles-test", name="article_test")
+     * @Template()
+     */
+    public function testAction()
+    {
+        $article= new Article();
+        
+        $article->setTitle('Symfony start')->setContetnt('Same text bla bla');
+        
+        return ['article'=>$article] ;
+        
+        
+        
+      
+        
+    }
+    
     
     
 }
