@@ -6,35 +6,36 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="article")
+ * @ORM\Table(name="test")
  */
 
 
-
-class Article 
+class Test 
 {
-
 
 /**
  * @ORM\Id
  * @ORM\GeneratedValue(strategy="AUTO")
  * @ORM\Column(type="integer")
  */
-
-            private $id;
-/**
+ 
+ private $id;
+ 
+ /**
  * @ORM\Column(type="string", length=100)
- */       
-            private $title;
-/**
+ */
+ 
+  private $title;
+            
+            
+ /**
   * 
   * @ORM\Column(type="text")
-  */            
-            private $contetnt;
-           
+  */
+  private $contetnt;
             
-    
-
+            
+            
 
     /**
      * Get id
@@ -51,7 +52,7 @@ class Article
      *
      * @param string $title
      *
-     * @return Article
+     * @return Test
      */
     public function setTitle($title)
     {
@@ -75,7 +76,7 @@ class Article
      *
      * @param string $contetnt
      *
-     * @return Article
+     * @return Test
      */
     public function setContetnt($contetnt)
     {

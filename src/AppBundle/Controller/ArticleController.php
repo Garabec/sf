@@ -16,10 +16,11 @@ class ArticleController extends Controller
     
    /**
      * @Route("/articles", name="article_list")
+     * @Template()
      */
     public function indexAction()
     {
-        return $this->render('article/index.html.twig') ;
+        return[] ;
         
         
         
@@ -29,11 +30,12 @@ class ArticleController extends Controller
     
     /**
      * @Route("/articles/{id}{sl}", name="article_page", requirements={"id":"[1-9][0-9]*","sl":"/?"})
+     * @Template()
      */
     public function showAction($id)
     {
         
-        return $this->render('article/show.html.twig',['id_var'=>$id]) ;
+        return ['id_var'=>$id] ;
         
         //return new Response(" <html><body> article: {$id} </body></html>");
         
@@ -51,12 +53,23 @@ class ArticleController extends Controller
         
         return ['article'=>$article] ;
         
-        
-        
-      
-        
-    }
+        }
     
+    
+    
+    /**
+     * @Route("/articles-testic", name="article_testic")
+     * @Template()
+     */
+    public function testicAction()
+    {
+        $article= new Article();
+        
+        $article->setTitle('Symfony start1')->setContetnt('Same text bla bla1');
+        
+        return ['article'=>$article] ;
+        
+        }
     
     
 }
